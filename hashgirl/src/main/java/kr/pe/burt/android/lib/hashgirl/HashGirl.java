@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 public class HashGirl {
 
     private TextView textView = null;
-    private OnHashClickListener onHashClickListener = null;
+    private OnClickHashListener onClickHashListener = null;
     private String text = null;
     private String pattern = null;
     private String postfixToRemove = "";
@@ -81,8 +81,8 @@ public class HashGirl {
         return this;
     }
 
-    public HashGirl click(OnHashClickListener onHashClickListener) {
-        this.onHashClickListener = onHashClickListener;
+    public HashGirl click(OnClickHashListener onClickHashListener) {
+        this.onClickHashListener = onClickHashListener;
         return this;
     }
 
@@ -96,7 +96,7 @@ public class HashGirl {
             return;
 
         String processedText = processText(pattern, text);
-        textView.setText(wrapIntoHashGirlURLSpan(processedText, onHashClickListener));
+        textView.setText(wrapIntoHashGirlURLSpan(processedText, onClickHashListener));
         textView.setMovementMethod(new HashGirlLinkMovementMethod());
 
     }
@@ -122,18 +122,18 @@ public class HashGirl {
         return processedData;
     }
 
-    private SpannableString wrapIntoHashGirlURLSpan(String htmlText, final OnHashClickListener onHashClickListener) {
+    private SpannableString wrapIntoHashGirlURLSpan(String htmlText, final OnClickHashListener onClickHashListener) {
         SpannableString s = SpannableString.valueOf(Html.fromHtml(htmlText));
         URLSpan[] urlSpanList = s.getSpans(0, s.length(), URLSpan.class);
         for(URLSpan urlSpan : urlSpanList) {
             int start = s.getSpanStart(urlSpan);
             int end = s.getSpanEnd(urlSpan);
             s.removeSpan(urlSpan);
-            HashGirlURLSpan hashGirlURLSpan = new HashGirlURLSpan(urlSpan.getURL(), new OnHashClickListener() {
+            HashGirlURLSpan hashGirlURLSpan = new HashGirlURLSpan(urlSpan.getURL(), new OnClickHashListener() {
                 @Override
                 public void onClickHash(String url) {
-                    if(onHashClickListener != null) {
-                        onHashClickListener.onClickHash(url);
+                    if(onClickHashListener != null) {
+                        onClickHashListener.onClickHash(url);
                     }
                 }
             });

@@ -7,7 +7,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import kr.pe.burt.android.lib.hashgirl.HashGirl;
-import kr.pe.burt.android.lib.hashgirl.OnHashClickListener;
+import kr.pe.burt.android.lib.hashgirl.OnClickHashListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         HashGirl
             .with(text)
             .grab("(#((\\w+ *)*)\\^)", "^")
-            .click(new OnHashClickListener() {
+            .click(new OnClickHashListener() {
                 @Override
                 public void onClickHash(String hash) {
                     Toast.makeText(MainActivity.this, hash, Toast.LENGTH_SHORT).show();
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 .underline()
                 .color(Color.BLUE)
                 .bgcolor(Color.WHITE)
-                .click(new OnHashClickListener() {
+                .click(new OnClickHashListener() {
                     @Override
                     public void onClickHash(String hash) {
                         Toast.makeText(MainActivity.this, hash, Toast.LENGTH_SHORT).show();

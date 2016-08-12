@@ -20,7 +20,7 @@ HashGirl
         .underline()
         .color(Color.BLUE)
         .bgcolor(Color.WHITE)
-        .click(new OnHashClickListener() {
+        .click(new OnClickHashListener() {
             @Override
             public void onClickHash(String hash) {
                 Toast.makeText(MainActivity.this, hash, Toast.LENGTH_SHORT).show();
@@ -34,7 +34,7 @@ HashGirl
 ```gradle
 dependencies {
     ...
-    compile 'kr.pe.burt.android.lib:hashgirl:1.0.2'
+    compile 'kr.pe.burt.android.lib:hashgirl:1.0.3'
 }
 ```
 
@@ -57,7 +57,7 @@ dependencies {
 	* set background color of the linked string
 * alpha(int alpha)
 	* set alpha of the linked string
-* click(OnHashClickListener onHashClickListener)
+* click(OnClickHashListener onClickHashListener)
 	* set a handler to process the click action of the linked string
 * into(TextView textVieW)
 	* set a TextView to set the result.   
@@ -74,7 +74,7 @@ TextView after1 = (TextView)findViewById(R.id.after1);
 HashGirl
     .with(text)
     .grab("(#((\\w+ *)*)\\^)", "^")
-    .click(new OnHashClickListener() {
+    .click(new OnClickHashListener() {
         @Override
         public void onClickHash(String hash) {
             Toast.makeText(MainActivity.this, hash, Toast.LENGTH_SHORT).show();
@@ -89,7 +89,7 @@ HashGirl
         .underline()
         .color(Color.BLUE)
         .bgcolor(Color.WHITE)
-        .click(new OnHashClickListener() {
+        .click(new OnClickHashListener() {
             @Override
             public void onClickHash(String hash) {
                 Toast.makeText(MainActivity.this, hash, Toast.LENGTH_SHORT).show();

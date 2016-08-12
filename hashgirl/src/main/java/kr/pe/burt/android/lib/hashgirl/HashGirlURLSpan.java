@@ -12,16 +12,16 @@ import android.view.View;
  */
 public class HashGirlURLSpan extends URLSpan {
 
-    private OnHashClickListener onHashClickListener = null;
+    private OnClickHashListener onClickHashListener = null;
     private boolean underline = false;
     private boolean strike = false;
     private int color = Color.RED;
     private int bgcolor = Color.TRANSPARENT;
     private int alpha = 255;
 
-    public HashGirlURLSpan(String url, OnHashClickListener onHashClickListener) {
+    public HashGirlURLSpan(String url, OnClickHashListener onClickHashListener) {
         super(url);
-        this.onHashClickListener = onHashClickListener;
+        this.onClickHashListener = onClickHashListener;
     }
 
 
@@ -40,7 +40,7 @@ public class HashGirlURLSpan extends URLSpan {
 
     @Override
     public void onClick(View widget) {
-        onHashClickListener.onClickHash(getURL());
+        onClickHashListener.onClickHash(getURL());
     }
 
     public void setUnderline(boolean underline) {
