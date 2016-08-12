@@ -4,7 +4,7 @@
 [![API](https://img.shields.io/badge/API-7%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=7)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
 
-HashGirl is a simple library to make a linkable string for Android. HashGirl can make hash a string which contains spaces. You can set regular expression to grap link and also you can set character to indicate the end of link. 
+HashGirl is a simple library to make a linkable string for Android. HashGirl can make hash a string which contains spaces. You can set the regular expression to grab a link and also you can set the character to indicate the end of the link.
 
 ![](art/hashgirl.gif)
 
@@ -16,7 +16,7 @@ String text = "Hello, I'm #Super Hash Girl^ in the World. You can hash #every^th
 TextView hashedTextView = (TextView)findViewById(R.id. hashedTextView);
 HashGirl
         .with(text)
-        .grap("(#((\\w+ *)*)\\^)", "^", "#")
+        .grab("(#((\\w+ *)*)\\^)", "^", "#")
         .underline()
         .color(Color.BLUE)
         .bgcolor(Color.WHITE)
@@ -43,9 +43,9 @@ dependencies {
 * with(String text)
 	* is static method to set the text data.
 	* You should start HashGirl from this 'with' method.
-* grap(String regExp)
-* grap(String regExp, String postfixToRemove = "", String prefixToRemove = "")
-	* set regular expression to grap linkable string
+* grab(String regExp)
+* grab(String regExp, String postfixToRemove = "", String prefixToRemove = "")
+	* set regular expression to grab linkable string
 	* set postfixToRemove or prefixToRemove to remove indicator of the start or end of the linked string.
 * underline()
 	* to underline linked string
@@ -73,7 +73,7 @@ before.setText(text);
 TextView after1 = (TextView)findViewById(R.id.after1);
 HashGirl
     .with(text)
-    .grap("(#((\\w+ *)*)\\^)", "^")		// remove postfix
+    .grab("(#((\\w+ *)*)\\^)", "^")		// remove postfix
     .click(new OnURLClickListener() {
         @Override
         public void onClickURL(String url) {
@@ -85,7 +85,7 @@ HashGirl
 TextView after2 = (TextView)findViewById(R.id.after2);
 HashGirl
         .with(text)
-        .grap("(#((\\w+ *)*)\\^)", "^", "#") // remove postfix and postfix
+        .grab("(#((\\w+ *)*)\\^)", "^", "#") // remove postfix and postfix
         .underline()
         .color(Color.BLUE)
         .bgcolor(Color.WHITE)

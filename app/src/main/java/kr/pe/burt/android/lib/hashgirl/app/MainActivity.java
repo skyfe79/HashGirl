@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         TextView after1 = (TextView)findViewById(R.id.after1);
         HashGirl
             .with(text)
-            .grap("(#((\\w+ *)*)\\^)", "^")
+            .grab("(#((\\w+ *)*)\\^)", "^")
             .click(new OnURLClickListener() {
                 @Override
                 public void onClickURL(String url) {
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         TextView after2 = (TextView)findViewById(R.id.after2);
         HashGirl
                 .with(text)
-                .grap("(#((\\w+ *)*)\\^)", "^", "#")
+                .grab("(#((\\w+ *)*)\\^)", "^", "#")
                 .underline()
                 .color(Color.BLUE)
                 .bgcolor(Color.WHITE)

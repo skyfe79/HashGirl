@@ -34,15 +34,15 @@ public class HashGirl {
         return hashGirl;
     }
 
-    public HashGirl grap(String pattern) {
-        return grap(pattern, "");
+    public HashGirl grab(String pattern) {
+        return grab(pattern, "");
     }
 
-    public HashGirl grap(String pattern, String postfixToRemove) {
-        return grap(pattern, postfixToRemove, prefixToRemove);
+    public HashGirl grab(String pattern, String postfixToRemove) {
+        return grab(pattern, postfixToRemove, prefixToRemove);
     }
 
-    public HashGirl grap(String pattern, String postfixToRemove, String prefixToRemove) {
+    public HashGirl grab(String pattern, String postfixToRemove, String prefixToRemove) {
         this.pattern = pattern;
         this.postfixToRemove = postfixToRemove;
         this.prefixToRemove = prefixToRemove;

@@ -15,7 +15,7 @@ publish {
     groupId = 'kr.pe.burt.android.lib'
     artifactId = 'hashgirl'
     publishVersion = '1.0.0'
-    desc = 'HashGirl is HashGirl'
+    desc = 'HashGirl is a simple library to make a linkable string for Android.'
     website = 'https://github.com/skyfe79/HashGirl'
 }
 
