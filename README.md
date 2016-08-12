@@ -34,7 +34,7 @@ HashGirl
 ```gradle
 dependencies {
     ...
-    compile 'kr.pe.burt.android.lib:hashgirl:1.0.0'
+    compile 'kr.pe.burt.android.lib:hashgirl:1.0.2'
 }
 ```
 
