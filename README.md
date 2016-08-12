@@ -4,7 +4,7 @@
 [![API](https://img.shields.io/badge/API-7%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=7)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
 
-HashGirl is a simple library to make linkable string for Android. HashGirl can make hash a string which contains spaces. You can set regular expression to grap link and also you can set character to indicate the end of link. 
+HashGirl is a simple library to make a linkable string for Android. HashGirl can make hash a string which contains spaces. You can set regular expression to grap link and also you can set character to indicate the end of link. 
 
 ![](art/hashgirl.gif)
 
