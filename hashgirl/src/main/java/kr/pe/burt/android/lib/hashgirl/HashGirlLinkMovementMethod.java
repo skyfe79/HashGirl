@@ -12,7 +12,13 @@ import android.widget.TextView;
 public class HashGirlLinkMovementMethod extends LinkMovementMethod {
     @Override
     public boolean onTouchEvent(TextView widget, Spannable buffer, MotionEvent event) {
-        Selection.removeSelection(buffer);
+
+        if(event.getAction() == MotionEvent.ACTION_UP
+                || event.getAction() == MotionEvent.ACTION_CANCEL
+                || event.getAction() == MotionEvent.ACTION_HOVER_EXIT
+                || event.getAction() == MotionEvent.ACTION_OUTSIDE) {
+            Selection.removeSelection(buffer);
+        }
         return super.onTouchEvent(widget, buffer, event);
     }
 }
