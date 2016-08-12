@@ -13,20 +13,20 @@ HashGirl uses method chain to make linkable string like below:
 ```java
 String text = "Hello, I'm #Super Hash Girl^ in the World. You can hash #every^thing what you want. #I will hash you^";
 
-TextView hashedTextView = (TextView)findViewById(R.id. hashedTextView);
+TextView afterTextView = (TextView)findViewById(R.id.afterTextView);
 HashGirl
         .with(text)
         .grab("(#((\\w+ *)*)\\^)", "^", "#")
         .underline()
         .color(Color.BLUE)
         .bgcolor(Color.WHITE)
-        .click(new OnURLClickListener() {
+        .click(new OnHashClickListener() {
             @Override
-            public void onClickURL(String url) {
-                Toast.makeText(MainActivity.this, url, Toast.LENGTH_SHORT).show();
+            public void onClickHash(String hash) {
+                Toast.makeText(MainActivity.this, hash, Toast.LENGTH_SHORT).show();
             }
         })
-        .into(hashedTextView);
+        .into(afterTextView);
 ```
 
 ## Setup Gradle
@@ -57,7 +57,7 @@ dependencies {
 	* set background color of the linked string
 * alpha(int alpha)
 	* set alpha of the linked string
-* clikc(OnURLClickListener onURLClickListener)
+* click(OnHashClickListener onHashClickListener)
 	* set a handler to process the click action of the linked string
 * into(TextView textVieW)
 	* set a TextView to set the result.   
@@ -73,11 +73,11 @@ before.setText(text);
 TextView after1 = (TextView)findViewById(R.id.after1);
 HashGirl
     .with(text)
-    .grab("(#((\\w+ *)*)\\^)", "^")		// remove postfix
-    .click(new OnURLClickListener() {
+    .grab("(#((\\w+ *)*)\\^)", "^")
+    .click(new OnHashClickListener() {
         @Override
-        public void onClickURL(String url) {
-            Toast.makeText(MainActivity.this, url, Toast.LENGTH_SHORT).show();
+        public void onClickHash(String hash) {
+            Toast.makeText(MainActivity.this, hash, Toast.LENGTH_SHORT).show();
         }
     })
     .into(after1);
@@ -85,14 +85,14 @@ HashGirl
 TextView after2 = (TextView)findViewById(R.id.after2);
 HashGirl
         .with(text)
-        .grab("(#((\\w+ *)*)\\^)", "^", "#") // remove postfix and postfix
+        .grab("(#((\\w+ *)*)\\^)", "^", "#")
         .underline()
         .color(Color.BLUE)
         .bgcolor(Color.WHITE)
-        .click(new OnURLClickListener() {
+        .click(new OnHashClickListener() {
             @Override
-            public void onClickURL(String url) {
-                Toast.makeText(MainActivity.this, url, Toast.LENGTH_SHORT).show();
+            public void onClickHash(String hash) {
+                Toast.makeText(MainActivity.this, hash, Toast.LENGTH_SHORT).show();
             }
         })
         .into(after2);

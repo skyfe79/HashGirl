@@ -3,12 +3,11 @@ package kr.pe.burt.android.lib.hashgirl.app;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import kr.pe.burt.android.lib.hashgirl.HashGirl;
-import kr.pe.burt.android.lib.hashgirl.OnURLClickListener;
+import kr.pe.burt.android.lib.hashgirl.OnHashClickListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
         HashGirl
             .with(text)
             .grab("(#((\\w+ *)*)\\^)", "^")
-            .click(new OnURLClickListener() {
+            .click(new OnHashClickListener() {
                 @Override
-                public void onClickURL(String url) {
-                    Toast.makeText(MainActivity.this, url, Toast.LENGTH_SHORT).show();
+                public void onClickHash(String hash) {
+                    Toast.makeText(MainActivity.this, hash, Toast.LENGTH_SHORT).show();
                 }
             })
             .into(after1);
@@ -41,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
                 .underline()
                 .color(Color.BLUE)
                 .bgcolor(Color.WHITE)
-                .click(new OnURLClickListener() {
+                .click(new OnHashClickListener() {
                     @Override
-                    public void onClickURL(String url) {
-                        Toast.makeText(MainActivity.this, url, Toast.LENGTH_SHORT).show();
+                    public void onClickHash(String hash) {
+                        Toast.makeText(MainActivity.this, hash, Toast.LENGTH_SHORT).show();
                     }
                 })
                 .into(after2);

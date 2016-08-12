@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.os.Build;
 import android.text.TextPaint;
-import android.text.method.LinkMovementMethod;
 import android.text.style.URLSpan;
 import android.view.View;
 
@@ -13,16 +12,16 @@ import android.view.View;
  */
 public class HashGirlURLSpan extends URLSpan {
 
-    private OnURLClickListener onURLClickListener = null;
+    private OnHashClickListener onHashClickListener = null;
     private boolean underline = false;
     private boolean strike = false;
     private int color = Color.RED;
     private int bgcolor = Color.TRANSPARENT;
     private int alpha = 255;
 
-    public HashGirlURLSpan(String url, OnURLClickListener onURLClickListener) {
+    public HashGirlURLSpan(String url, OnHashClickListener onHashClickListener) {
         super(url);
-        this.onURLClickListener = onURLClickListener;
+        this.onHashClickListener = onHashClickListener;
     }
 
 
@@ -41,7 +40,7 @@ public class HashGirlURLSpan extends URLSpan {
 
     @Override
     public void onClick(View widget) {
-        onURLClickListener.onClickURL(getURL());
+        onHashClickListener.onClickHash(getURL());
     }
 
     public void setUnderline(boolean underline) {
